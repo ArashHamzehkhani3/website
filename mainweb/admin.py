@@ -7,17 +7,25 @@ from mainweb.models import Book,Contact
 class BookAdmin(admin.ModelAdmin):
     date_hierarchy = 'date'
     list_display = ('name','meal','capacity')
-    ordering=['date']
+    #ordering=['date']
     search_fields=['name']
 
 
 
 
 
+class ContactAdmin(admin.ModelAdmin):
+    
+        list_display = ('name','email')
+        search_fields = ('name','message')
+
+        
+
+
 
 
 admin.site.register(Book,BookAdmin)
-admin.site.register(Contact)
+admin.site.register(Contact,ContactAdmin)
 
 
 
