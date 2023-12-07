@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from mainweb.models import Book
 
 
 def index_views(request):
@@ -9,7 +10,7 @@ def index_views(request):
 
 def test_view(request):
 
-
-   context={'name':'arash'}
+   book=Book.objects.all()
+   context={'book':book}
 
    return render(request,'test.html',context)
