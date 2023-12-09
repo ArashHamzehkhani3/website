@@ -6,10 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-   {% for book in book %}
+   <form action="{% url 'mainweb:test' %}" method="post">
 
-   <h1>{{book.name}}</h1>
-   <p>{{book.meal}}</book></p>
-   {%endfor%}
+    {% csrf_token %}
+
+   <label>name:</label>
+   <input name="name" type="text"></br>
+   <label>email</label>
+   <input name="email" type="email">
+   <label>subject</label>
+   <input name="subject" type="text">
+   <label>message</label>
+   <input name="message" type="text">
+   <button type="submit">submit</button>
+
+   </form>
 </body>
 </html>
